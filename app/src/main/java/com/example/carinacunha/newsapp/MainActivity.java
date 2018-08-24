@@ -107,7 +107,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         });
     }
 
-
     // Create a new loader for the given API ordered by the most recent
     @Override
     public Loader<List<News>> onCreateLoader(int id, Bundle args) {

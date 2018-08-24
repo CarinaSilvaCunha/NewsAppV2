@@ -61,7 +61,6 @@ public class NewsUtils {
         return news;
     }
 
-
     // Transform the String URL into an object URL
     private static URL transformURL(String newsURL) {
         URL url = null;
