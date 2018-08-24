@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_linear_layout"
+    tools:context=".MainActivity"
+    style="@style/main_linear_layout">
+
+    <TextView
+        android:id="@+id/news_section"
+        android:text="@string/news_section"
+        style="@style/news_section" />
+
+    <ImageView
+        android:id="@+id/news_image"
+        style="@style/news_image" />
+
+    <TextView
+        android:id="@+id/news_title"
+        android:text="@string/news_title"
+        style="@style/news_title" />
+
+    <LinearLayout
+        android:id="@+id/linear_bottom_layout"
+        style="@style/linear_bottom_layout">
+
+        <TextView
+            android:id="@+id/news_author"
+            android:text="@style/news_author"
+            style="@style/news_author" />
+
+        <TextView
+            android:id="@+id/news_date"
+            android:text="@string/news_date"
+            style="@style/news_date" />
+    </LinearLayout>
+</LinearLayout>

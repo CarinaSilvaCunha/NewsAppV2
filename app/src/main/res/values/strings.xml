@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">News App (v1)</string>
+    <string name="no_browser_found">Sorry! Could not find internet browser. Please install one.</string>
+    <string name="connection_unavailable">Sorry! Couldn\'t connect to the internet. \n Please turn on your wifi or mobile data and refresh.</string>
+    <string name="unexpected_behaviour">Sorry! Couldn\'t load the news. \n Please try again later.</string>
+
+    <!-- API -->
+    <string name="order_by">order-by</string>
+    <string name="newest">newest</string>
+    <string name="show_fields">show-fields</string>
+    <string name="thumbnail">thumbnail</string>
+    <string name="show_tags">show-tags</string>
+    <string name="contributor">contributor</string>
+    <string name="page_size">page-size</string>
+    <string name="page_size_number">20</string>
+    <string name="api_key">api-key</string>
+
+    <!-- activity_main.xml -->
+    <string name="news_section">News Section</string>
+    <string name="news_title">This is a News Title coming from the API</string>
+    <string name="news_author">Placeholder Author</string>
+    <string name="news_date">24/08/2018</string>
+
+    <!-- NewsAdapter -->
+    <string name="date_error">Sorry! There was an error during formatting date</string>
+    <!-- NewsUtils -->
+    <string name="http_failed">HTTP request failed on queryNews</string>
+    <string name="url_transf_failed">Could not build URL with transformURL</string>
+    <string name="error_http">Error on httpRequest: </string>
+    <string name="ioException">The connection httpRequest failed</string>
+    <string name="not_available">Not Available</string>
+    <string name="intro_author">Author :</string>
+    <string name="jsonException">Oops! Something went wrong parcing the results</string>
+    <string name="exception_image">Sorry! Couldn\'t retrieve news Image</string>
+</resources>

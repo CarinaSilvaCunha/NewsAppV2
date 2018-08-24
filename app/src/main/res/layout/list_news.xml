@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.SwipeRefreshLayout
+    android:id="@+id/swipe_refresh_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/swipe_refresh_layout">
+
+    <RelativeLayout
+        android:id="@+id/relative_layout"
+        style="@style/relative_layout">
+
+        <ListView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/list_view"
+            style="@style/list_view" />
+
+        <TextView
+            android:id="@+id/default_view"
+            android:text="@string/unexpected_behaviour"
+            style="@style/default_view" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            style="@style/progress_bar" />
+
+    </RelativeLayout>
+</android.support.v4.widget.SwipeRefreshLayout>
