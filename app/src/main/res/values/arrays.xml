@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sections">
+        <item>@string/all_news</item>
+        <item>@string/business</item>
+        <item>@string/science</item>
+        <item>@string/technology</item>
+    </string-array>
+</resources>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">News App (v1)</string>
+    <string name="app_name">News App (v2)</string>
     <string name="no_browser_found">Sorry! Could not find internet browser. Please install one.</string>
     <string name="connection_unavailable">Sorry! Couldn\'t connect to the internet. \n Please turn on your wifi or mobile data and refresh.</string>
     <string name="unexpected_behaviour">Sorry! Couldn\'t load the news. \n Please try again later.</string>
@@ -32,4 +32,15 @@
     <string name="intro_author">Author :</string>
     <string name="jsonException">Oops! Something went wrong parcing the results</string>
     <string name="exception_image">Sorry! Couldn\'t retrieve news Image</string>
+
+    <!-- Settings -->
+    <string name="settings_title">News Section Settings</string>
+    <string name="settings_menu_item">Settings</string>
+    <string name="select_news_section">News Section</string>
+    <string name="select_section_from_news">Choose from news Section</string>
+    <string name="all_news">All news</string>
+    <string name="business">Business</string>
+    <string name="science">Science</string>
+    <string name="technology">Technology</string>
+
 </resources>

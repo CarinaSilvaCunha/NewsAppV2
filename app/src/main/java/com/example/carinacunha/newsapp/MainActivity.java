@@ -4,23 +4,28 @@ import android.app.LoaderManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.Loader;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
+import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.carinacunha.newsapp.News.News;
 import com.example.carinacunha.newsapp.News.NewsAdapter;
 import com.example.carinacunha.newsapp.News.NewsLoader;
-import com.example.carinacunha.newsapp.News.News;
+import com.example.carinacunha.newsapp.Settings.Settings;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,10 +37,9 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     // Constant value for the API Key
     private static final String KEY = "97daca29-4108-49f1-92ff-fd50091aee00";
-
+    private static final String SECTION = "section";
     // Empty text view
     private TextView default_view;
-
     // NewsAdapter
     private NewsAdapter newsAdapter;
 
@@ -108,10 +112,24 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     }
 
     // Create a new loader for the given API ordered by the most recent
+    // If section preference is different than all,  display news of that section
     @Override
     public Loader<List<News>> onCreateLoader(int id, Bundle args) {
+        SharedPreferences sectionPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        String searchCategory = sectionPreferences.getString(getString(R.string.select_news_section), getString(R.string.all_news));
+
+        String[] categorySep = searchCategory.split(" ");
+        String categoryCap = categorySep[0];
+        String category = categoryCap.toLowerCase();
+
         Uri baseUri = Uri.parse(API_URL);
         Uri.Builder queryBuilder = baseUri.buildUpon();
+
+
+        if (!category.equals("all")) {
+            queryBuilder.appendQueryParameter(SECTION, category);
+        }
+
         queryBuilder.appendQueryParameter(getString(R.string.order_by), getString(R.string.newest));
         queryBuilder.appendQueryParameter(getString(R.string.show_fields), getString(R.string.thumbnail));
         queryBuilder.appendQueryParameter(getString(R.string.show_tags), getString(R.string.contributor));
@@ -168,6 +186,26 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         LoaderManager loaderManager = getLoaderManager();
         loaderManager.restartLoader(R.integer.loader, null, this);
     }
+
+    @Override
+    // This method initialize the contents of the Activity's options menu
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    // This method is called whenever an item in the options menu is selected.
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.setting) {
+            Intent settingsIntent = new Intent(this, Settings.class);
+            startActivity(settingsIntent);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 
 }
 
